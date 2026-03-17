@@ -1,0 +1,4 @@
+Kutya - Nev: Bodri, eletkor: 5 ev, bekerulesi ev: 2022, orokbefogadhato: igen, menhelyen toltott id: 4 ev, fajta: Labrador, hang: Vau vau!
+Macska - Nev: Cirmi, eletkor: 3 ev, bekerulesi ev: 2024, orokbefogadhato: igen, menhelyen toltott id: 2 ev, benti macska: igen, hang: Miau!
+Macska - Nev: Pamacs, eletkor: 2 ev, bekerulesi ev: 2025, orokbefogadhato: igen, menhelyen toltott id: 1 ev, benti macska: nem, hang: Miau!
+Kutya - Nev: Foltos, eletkor: 4 ev, bekerulesi ev: 2023, orokbefogadhato: igen, menhelyen toltott id: 3 ev, fajta: Magyar vizsla, hang: Vau vau!

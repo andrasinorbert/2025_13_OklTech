@@ -1,0 +1,6 @@
+kutya;Bodri;5;2022;igen;Labrador
+macska;Cirmi;3;2024;igen;igen
+kutya;Morzsi;8;2020;nem;Beagle
+macska;Pamacs;2;2025;igen;nem
+kutya;Foltos;4;2023;igen;Magyar vizsla
+macska;Szeder;6;2021;nem;igen

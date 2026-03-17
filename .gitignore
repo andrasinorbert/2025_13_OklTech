@@ -1,7 +1,12 @@
 *.pyc
+*.sln
+*.csproj
 .env*
 *.log
 **/node_modules/
 **/dist/
+**/.vs/
+**/obj/
+**/bin/
 package.json
 package-lock.json
