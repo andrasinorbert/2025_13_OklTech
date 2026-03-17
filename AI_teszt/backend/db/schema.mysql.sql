@@ -1,0 +1,48 @@
+﻿CREATE DATABASE IF NOT EXISTS blog_app
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE blog_app;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  name VARCHAR(120) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  password_hash VARCHAR(255) NOT NULL,
+  role ENUM('admin', 'user') NOT NULL DEFAULT 'user',
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_users_email (email)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS posts (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  content TEXT NOT NULL,
+  created_by INT UNSIGNED NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  KEY idx_posts_created_by (created_by),
+  CONSTRAINT fk_posts_created_by
+    FOREIGN KEY (created_by) REFERENCES users(id)
+    ON DELETE RESTRICT
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE IF NOT EXISTS likes (
+  id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+  user_id INT UNSIGNED NOT NULL,
+  post_id INT UNSIGNED NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id),
+  UNIQUE KEY uq_likes_user_post (user_id, post_id),
+  KEY idx_likes_post (post_id),
+  CONSTRAINT fk_likes_user
+    FOREIGN KEY (user_id) REFERENCES users(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT fk_likes_post
+    FOREIGN KEY (post_id) REFERENCES posts(id)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
