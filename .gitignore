@@ -8,5 +8,7 @@
 **/.vs/
 **/obj/
 **/bin/
+**/.vscode/
 package.json
 package-lock.json
+

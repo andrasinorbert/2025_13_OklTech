@@ -16,6 +16,9 @@ class Allat:
     def hangot_ad(self) -> str:
         raise NotImplementedError("A leszarmazott osztaly valositja meg.")
 
+    def __str__(self):
+        pass
+
     def adatok_szovegesen(self) -> str:
         orokbefogadhato_szoveg = "igen" if self.orokbefogadhato else "nem"
         return (
