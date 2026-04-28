@@ -108,8 +108,9 @@ Teszt újra: Ha zöld, a refaktor sikeres.
 
 ## Hasznos tipp
 
-Futtatáshoz használhatod ezt a kapcsolót, így részletesebb eredményt fogsz látni
+Futtatáshoz használhatod ezeket a kapcsolókat, így részletesebb eredményt fogsz látni
 
 ```sh
 pytest -v
+pytest -vv
 ```
